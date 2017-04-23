@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     StringBuilder mStringBuilder;
 
     //自动计算
-    boolean      mIfAutoCalc;
+    boolean mIfAutoCalc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,7 +88,26 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_7:
             case R.id.btn_8:
             case R.id.btn_9:
+                if (mStringBuilder.length() > 0) {
+                    if (mStringBuilder.charAt(mStringBuilder.length() - 1) != ')') {
+                        if (mStringBuilder.length() == 1 && mStringBuilder.charAt(0) == '0') {
+                            mStringBuilder.deleteCharAt(0);
+                        }
+                        mStringBuilder.append(button.getText());
+                    }
+                }
+                break;
             case R.id.btn_left_p:
+                if (mStringBuilder.length() > 0) {
+                    char c = mStringBuilder.charAt(mStringBuilder.length() - 1);
+                    if (!(c <= '9' && c >= '0') || (mStringBuilder.length() == 1 && mStringBuilder.charAt(0) == '0')) {
+                        if (mStringBuilder.length() == 1 && mStringBuilder.charAt(0) == '0') {
+                            mStringBuilder.deleteCharAt(0);
+                        }
+                        mStringBuilder.append(button.getText());
+                    }
+                }
+                break;
             case R.id.btn_right_p:
                 if (mStringBuilder.length() == 1 && mStringBuilder.charAt(0) == '0') {
                     mStringBuilder.deleteCharAt(0);
@@ -201,7 +220,9 @@ public class MainActivity extends AppCompatActivity {
                 } else if (ss[i - 1] <= '9' && ss[i - 1] >= '0') {
                     num.push(Double.parseDouble(stringBuilder.toString()));
                     stringBuilder = new StringBuilder();
-                } else  {
+                } else if (ss[i - 1] == ')'){
+                    checkMulAndDiv(operation, num);
+                } else {
                     throw new CustomerException("There should be an expression before ')'.");
                 }
                 //乘除法检测
