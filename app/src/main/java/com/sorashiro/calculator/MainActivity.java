@@ -153,7 +153,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void toCalcResult() {
-        String toCalc = mTextCalc.getText().toString();
+        if (mStringBuilder.length() > 0 && mStringBuilder.charAt(mStringBuilder.length() - 1) == '=') {
+            mStringBuilder.deleteCharAt(mStringBuilder.length() - 1);
+        }
+        String toCalc = mStringBuilder.toString();
         String resultString = "";
         try {
             resultString = calcResult(toCalc, new Stack<Character>(), new Stack<Double>());
@@ -218,7 +221,7 @@ public class MainActivity extends AppCompatActivity {
                 } else if (ss[i - 1] <= '9' && ss[i - 1] >= '0') {
                     num.push(Double.parseDouble(stringBuilder.toString()));
                     stringBuilder = new StringBuilder();
-                } else if (ss[i - 1] == ')'){
+                } else if (ss[i - 1] == ')') {
                     checkMulAndDiv(operation, num);
                 } else {
                     throw new CustomerException("There should be an expression before ')'.");
