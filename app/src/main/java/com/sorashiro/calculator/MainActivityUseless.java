@@ -1,4 +1,4 @@
-package com.sorashiro.caculator;
+package com.sorashiro.calculator;
 
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
@@ -13,9 +13,9 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.sorashiro.caculator.exception.CustomerException;
-import com.sorashiro.caculator.util.AnimationUtil;
-import com.sorashiro.caculator.util.AppSaveDataSPUtil;
+import com.sorashiro.calculator.exception.CustomerException;
+import com.sorashiro.calculator.util.AnimationUtil;
+import com.sorashiro.calculator.util.AppSaveDataSPUtil;
 
 import java.math.BigDecimal;
 import java.util.Stack;

@@ -1,4 +1,4 @@
-package com.sorashiro.caculator;
+package com.sorashiro.calculator;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -9,16 +9,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.sorashiro.caculator.exception.CustomerException;
-import com.sorashiro.caculator.util.AnimationUtil;
-import com.sorashiro.caculator.util.AppSaveDataSPUtil;
-import com.sorashiro.caculator.util.LogAndToastUtil;
+import com.sorashiro.calculator.exception.CustomerException;
+import com.sorashiro.calculator.util.AnimationUtil;
+import com.sorashiro.calculator.util.AppSaveDataSPUtil;
+import com.sorashiro.calculator.util.LogAndToastUtil;
 
-import java.text.NumberFormat;
 import java.util.Stack;
 
 import butterknife.BindView;

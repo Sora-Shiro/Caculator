@@ -1,4 +1,4 @@
-package com.sorashiro.caculator;
+package com.sorashiro.calculator;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.sorashiro.caculator;
+package com.sorashiro.calculator;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

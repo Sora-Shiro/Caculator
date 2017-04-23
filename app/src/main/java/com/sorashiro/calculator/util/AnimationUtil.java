@@ -1,4 +1,4 @@
-package com.sorashiro.caculator.util;
+package com.sorashiro.calculator.util;
 
 import android.animation.ObjectAnimator;
 import android.view.View;

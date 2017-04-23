@@ -1,4 +1,4 @@
-package com.sorashiro.caculator.util;
+package com.sorashiro.calculator.util;
 
 import android.content.Context;
 import android.util.Log;

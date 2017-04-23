@@ -1,4 +1,4 @@
-package com.sorashiro.caculator.exception;
+package com.sorashiro.calculator.exception;
 
 /**
  * @author Sora
