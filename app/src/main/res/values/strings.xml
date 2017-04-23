@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Caculator</string>
+    <string name="app_name">Calculator</string>
     <string name="left_p">(</string>
     <string name="right_p">)</string>
     <string name="del">DEL</string>
