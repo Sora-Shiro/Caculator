@@ -8,3 +8,5 @@ A simple calculator.
 Supports four arithmetic operation, parentheses, and automatic operation.
 
 [Click me to Download APK](https://raw.githubusercontent.com/Sora-Shiro/Calculator/master/Extra/Calculator.apk)
+
+![Example](https://github.com/Sora-Shiro/Calculator/blob/master/Extra/example.gif)
