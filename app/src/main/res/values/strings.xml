@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Caculator</string>
+    <string name="left_p">(</string>
+    <string name="right_p">)</string>
+    <string name="del">DEL</string>
+    <string name="c">C</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="divide">/</string>
+    <string name="_4">4</string>
+    <string name="_5">5</string>
+    <string name="_6">6</string>
+    <string name="multi">*</string>
+    <string name="_7">7</string>
+    <string name="_8">8</string>
+    <string name="_9">9</string>
+    <string name="sub">-</string>
+    <string name="_0">0</string>
+    <string name="dot">.</string>
+    <string name="equal">=</string>
+    <string name="plus">+</string>
+    <string name="result_area">Result Area</string>
+    <string name="enter_area">Enter Area</string>
+    <string name="if_auto_cal">是否自动计算</string>
+    <string name="auto_calc">自动计算</string>
+    <string name="scm">科学计数法</string>
+</resources>

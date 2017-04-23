@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="app_background">#fbfbfb</color>
+    <color name="md_thumb_back_blue">#BBDEFB</color>
+    <color name="md_thumb_blue">#2196F3</color>
+    <color name="blue_primary">#2196F3</color>
+    <color name="blue_primary_dark">#1976D2</color>
+    <color name="blue_primary_light">#BBDEFB</color>
+    <color name="blue_primary_darker">#FF01579B</color>
+    <color name="blue_accent">#03A9F4</color>
+    <color name="black_primary_text">#212121</color>
+    <color name="black_secondary_text">#757575</color>
+    <color name="grey_secondary_text">#616161</color>
+    <color name="white_icons">#FFFFFF</color>
+    <color name="white_text">#e6ffffff</color>
+    <color name="black_divider">#BDBDBD</color>
+    <color name="grey">#BDBDBD</color>
+    <color name="yellow_error">#DDAA00</color>
+    <color name="btn_divider">#bdbdbd</color>
+</resources>
