@@ -31,7 +31,7 @@ public class AnimationUtil {
     }
 
     public static void twinkle(View view) {
-        ObjectAnimator animator = ObjectAnimator.ofFloat(view, "alpha", 1, 0.5f, 1);
+        ObjectAnimator animator = ObjectAnimator.ofFloat(view, "alpha", 1, 0.2f, 1);
         animator.setDuration(300);
         animator.start();
     }
