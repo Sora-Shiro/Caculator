@@ -17,9 +17,11 @@ public class AppSaveDataSPUtil {
 
     private static Context sContext;
 
+    //Main Catalog
     //主目录
     private static final String DATA_CONFIG = "data_config";
 
+    //If auto calculation
     //是否自动计算
     private static final String IF_A_C = "if_auto_calc";
 
@@ -29,6 +31,7 @@ public class AppSaveDataSPUtil {
     private AppSaveDataSPUtil() {
     }
 
+    //Must call this function before change or get the data
     //修改或获得数据前必须先调用该函数
     public static void init(Context context) {
         if (sContext != null) {

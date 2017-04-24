@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.ScrollingMovementMethod;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -41,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
     StringBuilder mStringBuilder;
 
+    //Auto Calculation flag
     //自动计算
     boolean mIfAutoCalc;
 
@@ -157,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
             mStringBuilder.deleteCharAt(mStringBuilder.length() - 1);
         }
         String toCalc = mStringBuilder.toString();
-        String resultString = "";
+        String resultString;
         try {
             resultString = calcResult(toCalc, new Stack<Character>(), new Stack<Double>());
         } catch (CustomerException e) {
@@ -187,6 +187,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             if (ch == '+' || ch == '-' || ch == '*' || ch == '/') {
+                //Check the number before operation
                 //检查运算符前的数字
                 if (ss[i - 1] == '.') {
                     stringBuilder.deleteCharAt(stringBuilder.length() - 1);
@@ -202,6 +203,7 @@ public class MainActivity extends AppCompatActivity {
                         num.push(0.0);
                     }
                 }
+                //Multiplication and division detection
                 //乘除法检测
                 checkMulAndDiv(operation, num);
                 operation.push(ch);
@@ -213,6 +215,7 @@ public class MainActivity extends AppCompatActivity {
                 if (i == 0) {
                     throw new CustomerException("')' can't be first.");
                 }
+                //Check the number before ')'
                 //检查括号前的数字
                 if (ss[i - 1] == '.') {
                     stringBuilder.deleteCharAt(stringBuilder.length() - 1);
@@ -222,12 +225,16 @@ public class MainActivity extends AppCompatActivity {
                     num.push(Double.parseDouble(stringBuilder.toString()));
                     stringBuilder = new StringBuilder();
                 } else if (ss[i - 1] == ')') {
+                    //Multiplication and division detection
+                    //乘除法检测
                     checkMulAndDiv(operation, num);
                 } else {
                     throw new CustomerException("There should be an expression before ')'.");
                 }
+                //Multiplication and division detection
                 //乘除法检测
                 checkMulAndDiv(operation, num);
+                //Load operations and numbers reversely until meet the '('
                 //直到遇到左括号为止，不断逆向读取运算符和数字
                 Stack<Character> subO = new Stack<>();
                 Stack<Double> subNumS = new Stack<>();
@@ -243,12 +250,14 @@ public class MainActivity extends AppCompatActivity {
                 if (subO.size() == 0 || subO.peek() != '(') {
                     throw new CustomerException("Need more '('.");
                 }
+                //Pop the '('
                 //弹出左括号
                 subO.pop();
+                //Calculate the value in the '()'
                 //计算括号内值
                 while (!subO.empty()) {
                     char o = subO.pop();
-                    if(subNumS.size() == 1) {
+                    if (subNumS.size() == 1) {
                         break;
                     }
                     double num1 = subNumS.pop();
@@ -272,6 +281,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         if (stringBuilder.length() != 0) {
+            //Check last number
             //检查最后的数字
             char last = stringBuilder.charAt(stringBuilder.length() - 1);
             if (last == '.') {
@@ -280,15 +290,18 @@ public class MainActivity extends AppCompatActivity {
             } else if (last <= '9' && last >= '0') {
                 num.push(Double.parseDouble(stringBuilder.toString()));
             }
+            //Multiplication and division detection
             //乘除法检测
             checkMulAndDiv(operation, num);
         } else {
+            //Handle the situation that if the last character isn't number or ')'
             //最后如果不是数字且不是')'的处理
             if (!operation.empty() && ss[i - 1] != ')') {
                 throw new CustomerException("Last character error.");
             }
         }
 
+        //Last Calculation, throw exception if meet the '('
         //进行最后计算，如果遇到左括号抛出异常
         Stack<Character> reverseO = new Stack<>();
         while (!operation.empty()) {
@@ -331,6 +344,7 @@ public class MainActivity extends AppCompatActivity {
         return reverseNum.pop().toString();
     }
 
+    //Multiplication and division detection
     //乘除法检测
     private void checkMulAndDiv(Stack<Character> operation, Stack<Double> num) {
         if (operation.size() > 0) {
@@ -380,6 +394,7 @@ public class MainActivity extends AppCompatActivity {
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                //Do nothing
                 //什么都不做
             }
         });
