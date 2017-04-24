@@ -227,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
                     throw new CustomerException("There should be an expression before ')'.");
                 }
                 //乘除法检测
-                boolean ifMulOrDivide = checkMulAndDiv(operation, num);
+                checkMulAndDiv(operation, num);
                 //直到遇到左括号为止，不断逆向读取运算符和数字
                 Stack<Character> subO = new Stack<>();
                 Stack<Double> subNumS = new Stack<>();
@@ -245,12 +245,12 @@ public class MainActivity extends AppCompatActivity {
                 }
                 //弹出左括号
                 subO.pop();
-                if (subNumS.size() == 1 && !ifMulOrDivide) {
-                    throw new CustomerException("Don't put just a num into '()'.");
-                }
                 //计算括号内值
                 while (!subO.empty()) {
                     char o = subO.pop();
+                    if(subNumS.size() == 1) {
+                        break;
+                    }
                     double num1 = subNumS.pop();
                     double num2 = subNumS.pop();
                     double result = 0.0;
@@ -333,7 +333,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //乘除法检测
-    private boolean checkMulAndDiv(Stack<Character> operation, Stack<Double> num) {
+    private void checkMulAndDiv(Stack<Character> operation, Stack<Double> num) {
         if (operation.size() > 0) {
             char o = operation.peek();
             if (o == '*' || o == '/') {
@@ -353,10 +353,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 operation.pop();
-                return true;
             }
         }
-        return false;
     }
 
     @OnClick(R.id.btn_config)
