@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/app_background"
-    tools:context="com.sorashiro.calculator.MainActivityUseless">
+    tools:context="com.sorashiro.calculator.MainActivity">
 
     <Button
         android:id="@+id/btn_config"
@@ -351,13 +351,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/text_result"
+        android:layout_below="@id/btn_config"
         android:layout_marginEnd="@dimen/text_lr_margin"
         android:layout_marginLeft="@dimen/text_lr_margin"
         android:layout_marginRight="@dimen/text_lr_margin"
         android:layout_marginStart="@dimen/text_lr_margin"
-        android:layout_marginTop="20dp"
         android:fadeScrollbars="false"
-        android:gravity="end"
+        android:gravity="bottom|end"
         android:hint="@string/enter_area"
         android:scrollbars="vertical"
         android:textColor="@color/grey_secondary_text"

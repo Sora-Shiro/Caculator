@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.ScrollingMovementMethod;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +16,6 @@ import android.widget.TextView;
 import com.sorashiro.calculator.exception.CustomerException;
 import com.sorashiro.calculator.util.AnimationUtil;
 import com.sorashiro.calculator.util.AppSaveDataSPUtil;
-import com.sorashiro.calculator.util.LogAndToastUtil;
 
 import java.util.Stack;
 
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
     public void onBtnClick(View view) {
         Button button = (Button) view;
         if (view.getId() != R.id.btn_equal)
-            mTextResult.setText("Result Area");
+            mTextResult.setText(getString(R.string.result_area));
         if (mStringBuilder.charAt(mStringBuilder.length() - 1) == '=') {
             mStringBuilder.deleteCharAt(mStringBuilder.length() - 1);
         }
@@ -305,7 +305,6 @@ public class MainActivity extends AppCompatActivity {
         while (!num.empty()) {
             reverseNum.push(num.pop());
         }
-        LogAndToastUtil.LogV(reverseO.toString() + " : " + reverseNum.toString());
         while (!reverseO.empty()) {
             char o = reverseO.pop();
             if (reverseNum.size() == 1) {
