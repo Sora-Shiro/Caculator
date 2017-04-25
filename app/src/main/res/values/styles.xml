@@ -14,6 +14,19 @@
         <item name="colorControlActivated">@color/blue_primary</item>
     </style>
 
+    <style name="AppPinkTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!--状态栏颜色-->
+        <item name="colorPrimaryDark">@color/pink</item>
+        <!--Toolbar颜色-->
+        <item name="colorPrimary">@color/blue_primary_dark</item>
+        <!--返回键样式-->
+        <item name="drawerArrowStyle">@style/AppTheme.DrawerArrowToggle</item>
+        <!-- AppCompatEditText默认状态状态设置底线颜色 -->
+        <item name="colorControlNormal">@color/white_icons</item>
+        <!-- AppCompatEditText选择的底线颜色 -->
+        <item name="colorControlActivated">@color/blue_primary</item>
+    </style>
+
     <style name="AppTheme.DrawerArrowToggle" parent="Base.Widget.AppCompat.DrawerArrowToggle">
         <item name="color">@android:color/white</item>
     </style>

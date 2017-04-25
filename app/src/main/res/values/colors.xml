@@ -21,4 +21,11 @@
     <color name="grey">#BDBDBD</color>
     <color name="yellow_error">#DDAA00</color>
     <color name="btn_divider">#bdbdbd</color>
+
+    <color name="app_background_pink">#fff4f4</color>
+    <color name="pink">#f8bbd0</color>
+    <color name="pink_secondary_text">#f8bbd0</color>
+    <color name="pink_btn_text">#f48fb1</color>
+    <color name="btn_divider_white">#e6ffffff</color>
+    <color name="btn_divider2_white">#ffffff</color>
 </resources>
