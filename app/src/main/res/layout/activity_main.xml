@@ -15,7 +15,7 @@
         android:layout_marginLeft="@dimen/btn_config_margin"
         android:layout_marginStart="@dimen/btn_config_margin"
         android:layout_marginTop="@dimen/btn_config_margin"
-        android:background="@drawable/config_pink"
+        android:background="@drawable/config_pin"
         />
 
     <EditText
