@@ -11,7 +11,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 24
         versionCode 3
-        versionName "1.2"
+        versionName "1.2.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -19,6 +19,16 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    android.applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def file = output.outputFile
+            output.outputFile = new File(
+                    file.parent,
+                    file.name.replace(
+                            "app-debug.apk",
+                            "Calculator_v" + defaultConfig.versionName + ".apk"))
         }
     }
 }
@@ -34,4 +44,9 @@ dependencies {
     //ButterKnife
     compile 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+}
+
+task copySupportFiles(type: Copy) {
+    from 'build/outputs/apk'
+    into '../apks'
 }
